@@ -1,0 +1,17 @@
+<Project>
+  <Import Project="$(MSBuildThisFileDirectory)..\..\build\default.props"/>
+
+  <PropertyGroup>
+    <TargetFrameworks>net4.8;net6.0</TargetFrameworks>
+  </PropertyGroup>
+
+  <PropertyGroup>
+    <BaseOutputPath>$(MSBuildThisFileDirectory)..\..\output\test\bin\$(Platform)</BaseOutputPath>
+    <BaseIntermediateOutputPath>$(MSBuildThisFileDirectory)..\..\output\test\obj\$(MSBuildProjectName)\</BaseIntermediateOutputPath>
+    <MSBuildProjectExtensionsPath>$(MSBuildThisFileDirectory)..\..\output\test\obj\$(MSBuildProjectName)\</MSBuildProjectExtensionsPath>
+    <IsPackable>false</IsPackable>
+    <SignAssembly>true</SignAssembly>
+    <AssemblyOriginatorKeyFile>$(RootDir)\build\certs\TemplateKeyPair.snk</AssemblyOriginatorKeyFile>
+  </PropertyGroup>
+
+</Project>

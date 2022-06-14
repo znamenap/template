@@ -1,0 +1,67 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.1.32104.313
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "configuration", "configuration", "{3498CEBF-1317-430A-8EA4-8AA2314E87A2}"
+	ProjectSection(SolutionItems) = preProject
+		.editorconfig = .editorconfig
+		bitbucket-pipelines.yml = bitbucket-pipelines.yml
+		README.MD = README.MD
+	EndProjectSection
+EndProject
+Project("{D954291E-2A0B-460D-934E-DC6B0785DB48}") = "build", "build\build.shproj", "{C4C9301B-1E11-4FCF-8CF7-D5FC08A17D04}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "main", "main", "{823933A0-C904-4264-85FC-3FBBAF4DBBFF}"
+	ProjectSection(SolutionItems) = preProject
+		sources\main\Directory.Build.props = sources\main\Directory.Build.props
+		sources\main\Directory.Build.targets = sources\main\Directory.Build.targets
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "test", "test", "{138E422A-5C9D-49D9-88EB-C899068688A6}"
+	ProjectSection(SolutionItems) = preProject
+		sources\test\Directory.Build.props = sources\test\Directory.Build.props
+		sources\test\Directory.Build.targets = sources\test\Directory.Build.targets
+	EndProjectSection
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Template", "sources\main\Template\Template.csproj", "{FECB3AC0-9C7F-4A0A-A1D6-AD706A0D2946}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Template.UnitTests", "sources\test\Template.UnitTests\Template.UnitTests.csproj", "{167106AA-3D41-4A41-A732-225D2DC98F9F}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Template.SystemTests", "sources\test\Template.SystemTests\Template.SystemTests.csproj", "{B8C2F68D-2FD8-4CAE-9631-6DC09FA465AD}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{FECB3AC0-9C7F-4A0A-A1D6-AD706A0D2946}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FECB3AC0-9C7F-4A0A-A1D6-AD706A0D2946}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FECB3AC0-9C7F-4A0A-A1D6-AD706A0D2946}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FECB3AC0-9C7F-4A0A-A1D6-AD706A0D2946}.Release|Any CPU.Build.0 = Release|Any CPU
+		{167106AA-3D41-4A41-A732-225D2DC98F9F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{167106AA-3D41-4A41-A732-225D2DC98F9F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{167106AA-3D41-4A41-A732-225D2DC98F9F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{167106AA-3D41-4A41-A732-225D2DC98F9F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B8C2F68D-2FD8-4CAE-9631-6DC09FA465AD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B8C2F68D-2FD8-4CAE-9631-6DC09FA465AD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B8C2F68D-2FD8-4CAE-9631-6DC09FA465AD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B8C2F68D-2FD8-4CAE-9631-6DC09FA465AD}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{C4C9301B-1E11-4FCF-8CF7-D5FC08A17D04} = {3498CEBF-1317-430A-8EA4-8AA2314E87A2}
+		{FECB3AC0-9C7F-4A0A-A1D6-AD706A0D2946} = {823933A0-C904-4264-85FC-3FBBAF4DBBFF}
+		{167106AA-3D41-4A41-A732-225D2DC98F9F} = {138E422A-5C9D-49D9-88EB-C899068688A6}
+		{B8C2F68D-2FD8-4CAE-9631-6DC09FA465AD} = {138E422A-5C9D-49D9-88EB-C899068688A6}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {0F15F76A-C859-408B-8757-1DBAABE12800}
+	EndGlobalSection
+	GlobalSection(SharedMSBuildProjectFiles) = preSolution
+		build\build.projitems*{c4c9301b-1e11-4fcf-8cf7-d5fc08a17d04}*SharedItemsImports = 13
+	EndGlobalSection
+EndGlobal

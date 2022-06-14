@@ -1,0 +1,32 @@
+
+image: mcr.microsoft.com/dotnet/sdk:6.0
+
+pipelines:
+  default:
+    - parallel:
+        - step:
+            name: Build and Test
+            caches:
+              - dotnetcore
+            script:
+              - apt update
+              - apt install -y mono-complete
+              - REPORTS_PATH=./output/reports/build_${BITBUCKET_BUILD_NUMBER}
+              - dotnet restore
+              - dotnet build --no-restore --configuration Release /p:PatchVersion=${BITBUCKET_BUILD_NUMBER} /p:GitBranch=${BITBUCKET_BRANCH} /p:GitCommit=${BITBUCKET_COMMIT}
+              - dotnet test --no-build --configuration Release --test-adapter-path:. --logger:"nunit;LogFilePath=$REPORTS_PATH/nunit.xml" --filter TestCategory!=Integration
+            artifacts:
+              - ./output/nuget/**
+        - step:
+            name: Lint the code
+            caches:
+              - dotnetcore
+            script:
+              - export SOLUTION_NAME=Template
+              - export REPORTS_PATH=./output/linter-reports
+              - dotnet new tool-manifest
+              - dotnet tool install JetBrains.ReSharper.GlobalTools
+              - dotnet tool restore
+              - dotnet jb inspectcode ${SOLUTION_NAME}.sln --no-build --output="${REPORTS_PATH}/jb-${BITBUCKET_BUILD_NUMBER}.xml"
+            artifacts:
+              - ./output/linter-reports/**

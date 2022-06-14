@@ -1,0 +1,47 @@
+<Project>
+  <PropertyGroup>
+
+    <!-- Build Parameters -->
+    <MajorVersion>1</MajorVersion>
+    <MinorVersion Condition="'$(MinorVersion)' == ''">0</MinorVersion>
+    <PatchVersion Condition="'$(PatchVersion)' == ''">0</PatchVersion>
+    <GitBranch Condition="'$(GitBranch)' == ''">feature</GitBranch>
+    <GitCommit Condition="'$(GitCommit)' == ''">local-build</GitCommit>
+    <Configuration Condition="'$(Configuration)' == ''">Release</Configuration>
+    <Platform Condition="'$(Platform)' == ''">Any CPU</Platform>
+
+    <!-- Identification -->
+    <Company>Template s.r.o.</Company>
+    <Copyright>Template s.r.o.</Copyright>
+    <Authors>Template Development Team</Authors>
+    <Description>Template Problem DOmain</Description>
+    <PackageProjectUrl>https://www.Template.cz/Template/</PackageProjectUrl>
+    <Product>Template</Product>
+    <ProductFileVersion>$(MajorVersion).$(MinorVersion).$(PatchVersion)</ProductFileVersion>
+    <InformationalVersion>$(MajorVersion).$(MinorVersion).$(PatchVersion).$(GitCommit)@$(GitBranch)</InformationalVersion>
+    <FileVersion>$(MajorVersion).$(MinorVersion).$(PatchVersion)</FileVersion>
+    <AssemblyVersion>$(MajorVersion).0.0</AssemblyVersion>
+    <Version>$(MajorVersion).$(MinorVersion).$(PatchVersion)</Version>
+    <VersionSuffix Condition="'$(VersionSuffix)' == 'master'"></VersionSuffix>
+    <VersionSuffix Condition="'$(VersionSuffix)' != 'master'">$(VersionSuffix)</VersionSuffix>
+
+    <!-- Build Specifics -->
+    <RootDir>$(MSBuildThisFileDirectory)..\</RootDir>
+    <WarningLevel>4</WarningLevel>
+
+    <!--  Language & Assembly -->
+    <WarningLevel>4</WarningLevel>
+    <LangVersion>7.3</LangVersion>
+    <Nullable>disable</Nullable>
+    <ImplicitUsings>disable</ImplicitUsings>
+
+    <!-- NuGet Package -->
+    <IsPackable>false</IsPackable>
+    <GeneratePackageOnBuild>false</GeneratePackageOnBuild>
+    <PackageOutputPath>$(RootDir)\output\nuget\</PackageOutputPath>
+    <PackageVersion Condition="'$(VersionSuffix)' != ''">$(Version)-$(VersionSuffix)</PackageVersion>
+    <PackageVersion Condition="'$(VersionSuffix)' == ''">$(Version)</PackageVersion>
+    <AllowedOutputExtensionsInPackageBuildOutputFolder>$(AllowedOutputExtensionsInPackageBuildOutputFolder);.pdb</AllowedOutputExtensionsInPackageBuildOutputFolder>
+
+  </PropertyGroup>
+</Project>

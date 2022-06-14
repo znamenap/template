@@ -1,0 +1,8 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <ItemGroup>
+    <!--<ProjectReference Include="..\..\main\Template.Common\Template.Common.csproj" />-->
+    <ProjectReference Include="..\..\main\Template\Template.csproj" />
+  </ItemGroup>
+
+</Project>

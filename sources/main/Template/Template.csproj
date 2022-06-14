@@ -1,0 +1,27 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+    <IsPackable>true</IsPackable>
+    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+    <NoWarn>NU5118</NoWarn>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <!--<ProjectReference Include="..\Template.Common\Template.Common.csproj" PrivateAssets="All" />-->
+  </ItemGroup>
+
+  <PropertyGroup>
+    <TargetsForTfmSpecificBuildOutput>$(TargetsForTfmSpecificBuildOutput);CopyProjectReferencesToPackage</TargetsForTfmSpecificBuildOutput>
+  </PropertyGroup>
+  <Target Name="CopyProjectReferencesToPackage" DependsOnTargets="ResolveReferences">
+    <ItemGroup>
+      <BuildOutputInPackage Include="@(ReferenceCopyLocalPaths-&gt;WithMetadataValue('ReferenceSourceTarget', 'ProjectReference')-&gt;WithMetadataValue('PrivateAssets', 'All'))" />
+      <BuildOutputInPackage Include="$(OutputPath)\*.pdb" />
+      <BuildOutputInPackage Include="$(OutputPath)\*.xml" />
+      <BuildOutputInPackage Update="@(BuildOutputInPackage)">
+        <TargetPath>%(BuildOutputInPackage.RecursiveDir)%(BuildOutputInPackage.FileName)%(BuildOutputInPackage.Extension)</TargetPath>
+      </BuildOutputInPackage>
+    </ItemGroup>
+  </Target>
+</Project>
