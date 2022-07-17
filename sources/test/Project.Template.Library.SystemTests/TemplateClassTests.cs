@@ -1,8 +1,9 @@
 using NUnit.Framework;
 
-namespace Template.UnitTests
+namespace Project.Template.Library.SystemTests
 {
-    public class TemplateTest
+    [Category("Integration")]
+    public class TemplateClassTests
     {
         [SetUp]
         public void Setup()
@@ -12,6 +13,7 @@ namespace Template.UnitTests
         [Test]
         public void Test1()
         {
+            new TemplateClass();
             Assert.Pass();
         }
     }

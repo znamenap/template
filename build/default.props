@@ -11,12 +11,13 @@
     <Platform Condition="'$(Platform)' == ''">Any CPU</Platform>
 
     <!-- Identification -->
-    <Company>Template s.r.o.</Company>
-    <Copyright>Template s.r.o.</Copyright>
+    <Company>Template Company</Company>
+    <Copyright>Template Company ©️</Copyright>
     <Authors>Template Development Team</Authors>
-    <Description>Template Problem DOmain</Description>
-    <PackageProjectUrl>https://www.Template.cz/Template/</PackageProjectUrl>
-    <Product>Template</Product>
+    <Description>Template Domain Solution</Description>
+    <PackageProjectUrl>https://www.template.net/product/</PackageProjectUrl>
+    <Product>Template Product ®️</Product>
+    <Trademark>Template Company ™️</Trademark>
     <ProductFileVersion>$(MajorVersion).$(MinorVersion).$(PatchVersion)</ProductFileVersion>
     <InformationalVersion>$(MajorVersion).$(MinorVersion).$(PatchVersion).$(GitCommit)@$(GitBranch)</InformationalVersion>
     <FileVersion>$(MajorVersion).$(MinorVersion).$(PatchVersion)</FileVersion>
@@ -28,10 +29,11 @@
     <!-- Build Specifics -->
     <RootDir>$(MSBuildThisFileDirectory)..\</RootDir>
     <WarningLevel>4</WarningLevel>
+    <CentralPackagesFile>$(MSBuildThisFileDirectory)Packages.props</CentralPackagesFile>
 
     <!--  Language & Assembly -->
     <WarningLevel>4</WarningLevel>
-    <LangVersion>7.3</LangVersion>
+    <LangVersion>10</LangVersion>
     <Nullable>disable</Nullable>
     <ImplicitUsings>disable</ImplicitUsings>
 
@@ -41,7 +43,25 @@
     <PackageOutputPath>$(RootDir)\output\nuget\</PackageOutputPath>
     <PackageVersion Condition="'$(VersionSuffix)' != ''">$(Version)-$(VersionSuffix)</PackageVersion>
     <PackageVersion Condition="'$(VersionSuffix)' == ''">$(Version)</PackageVersion>
-    <AllowedOutputExtensionsInPackageBuildOutputFolder>$(AllowedOutputExtensionsInPackageBuildOutputFolder);.pdb</AllowedOutputExtensionsInPackageBuildOutputFolder>
+   </PropertyGroup>
 
+  <PropertyGroup Label="Source Link Parameters">
+    <PublishRepositoryUrl Label="Optional: Publish the repository URL in the built .nupkg (in the NuSpec &lt;Repository&gt; element)">true</PublishRepositoryUrl>
+    <EmbedUntrackedSources Label="Optional: Embed source files that are not tracked by the source control manager in the PDB" >true</EmbedUntrackedSources>
+    <IncludeSymbols Label="Optional: Build symbol package (.snupkg) to distribute the PDB containing Source Link">false</IncludeSymbols>
+    <SymbolPackageFormat>snupkg</SymbolPackageFormat>
+    <GitRepoHost Label="Determines which package to reference based on the name: GitHub, Bitbucket, ">GitHub</GitRepoHost>
+    <AllowedOutputExtensionsInPackageBuildOutputFolder>$(AllowedOutputExtensionsInPackageBuildOutputFolder);.pdb</AllowedOutputExtensionsInPackageBuildOutputFolder>
   </PropertyGroup>
+
+  <ItemGroup Label="Source Link Items">
+    <SourceLinkBitbucketGitHost Include="bitbucket.yourdomain.com" Version="4.5" Condition=" '$(GitRepoHost)' == 'Bitbucket' "/>
+  </ItemGroup>
+
+  <ItemGroup>
+    <AssemblyAttribute Include="System.Reflection.AssemblyTrademarkAttribute">
+      <_Parameter1>$(Trademark)</_Parameter1>
+    </AssemblyAttribute>
+  </ItemGroup>
+  
 </Project>

@@ -1,15 +1,11 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
+
   <PropertyGroup>
-    <TargetFramework>netstandard2.0</TargetFramework>
     <IsPackable>true</IsPackable>
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
-    <NoWarn>NU5118</NoWarn>
+    <NoWarn>$(NoWarn);NU5118</NoWarn>
   </PropertyGroup>
-
-  <ItemGroup>
-    <!--<ProjectReference Include="..\Template.Common\Template.Common.csproj" PrivateAssets="All" />-->
-  </ItemGroup>
 
   <PropertyGroup>
     <TargetsForTfmSpecificBuildOutput>$(TargetsForTfmSpecificBuildOutput);CopyProjectReferencesToPackage</TargetsForTfmSpecificBuildOutput>
@@ -24,4 +20,5 @@
       </BuildOutputInPackage>
     </ItemGroup>
   </Target>
+  
 </Project>
