@@ -2,8 +2,7 @@
   <Import Project="$(MSBuildThisFileDirectory)..\..\build\default.props"/>
 
   <PropertyGroup>
-    <TargetFramework>net48</TargetFramework>
-    <!-- <TargetFrameworks>net48;net6.0</TargetFrameworks> -->
+    <TargetFrameworks>net48;net6.0</TargetFrameworks>
   </PropertyGroup>
 
   <PropertyGroup>
