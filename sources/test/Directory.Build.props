@@ -26,7 +26,7 @@
     <UseSourceLink>true</UseSourceLink>
     <DeterministicReport>true</DeterministicReport>
     <DeterministicSourcePaths>true</DeterministicSourcePaths>
-    <Exclude>.*[SystemTests.dll];.*[UnitTests.dll]</Exclude>
+    <Exclude>[*UnitTests*]*,[*SystemTests]*</Exclude>
     <IncludeTestAssembly>false</IncludeTestAssembly>
   </PropertyGroup>
 
