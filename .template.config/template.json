@@ -1,0 +1,112 @@
+{
+  "$schema": "https://json.schemastore.org/template.json",
+  "author": "znamenap",
+  "classifications": [ "Service", "Library" ],
+  "groupIdentity": "Project.Template",
+  "identity": "Project.Template.Library.Template",
+  "name": "Project.Template.Library.Template",
+  "description": "An opinionated project library.",
+  "shortName": "ptl",
+  "tags": {
+    "type": "solution",
+    "language": "C#"
+  },
+  "preferNameDirectory": false,
+  "rename": {
+    "gitignore.txt": ".gitignore",
+    "editorconfig.txt": ".editorconfig"
+  },
+  "guids": [
+    "9A19103F-16F7-4668-BE54-9A1E7A4F7556",
+    "2150E333-8FDC-42A3-9474-1A3956D46DE8",
+    "3498CEBF-1317-430A-8EA4-8AA2314E87A2",
+    "823933A0-C904-4264-85FC-3FBBAF4DBBFF",
+    "138E422A-5C9D-49D9-88EB-C899068688A6",
+    "FECB3AC0-9C7F-4A0A-A1D6-AD706A0D2946",
+    "167106AA-3D41-4A41-A732-225D2DC98F9F",
+    "B8C2F68D-2FD8-4CAE-9631-6DC09FA465AD",
+    "257E52E9-57C9-44DB-9BAF-B055C9F7F6E9",
+    "13B669BE-BB05-4DDF-9536-439F39A36129",
+    "0F15F76A-C859-408B-8757-1DBAABE12800"
+  ],
+  "symbols": {
+    "project": {
+      "type": "parameter",
+      "description": "Replacement for 'Project' in the Project.Template.Library compound naming.",
+      "datatype": "text",
+      "isRequired": true,
+      "displayName": "The Project Name"
+    },
+    "project-replacement-filename": {
+      "type": "derived",
+      "valueSource": "project",
+      "valueTransform": "project-rename",
+      "fileRename": "Acme",
+      "replaces": "Acme"
+    },
+    "domain": {
+      "type": "parameter",
+      "description": "Replacement for 'Template' in the Project.Template.Library compound naming.",
+      "datatype": "text",
+      "isRequired": true,
+      "displayName": "The Domain Name"
+    },
+    "domain-replacement-filename": {
+      "type": "derived",
+      "valueSource": "domain",
+      "valueTransform": "domain-rename",
+      "fileRename": "Contoso",
+      "replaces": "Contoso"
+    },
+    "library": {
+      "type": "parameter",
+      "description": "Replacement for 'Library' in the Project.Template.Library compound naming.",
+      "datatype": "text",
+      "isRequired": true,
+      "displayName": "The Library Name"
+    },
+    "library-replacement-filename": {
+      "type": "derived",
+      "valueSource": "library",
+      "valueTransform": "library-rename",
+      "fileRename": "Ultron",
+      "replaces": "Ultron"
+    },
+    "company": {
+      "type": "parameter",
+      "description": "Replacement for 'Company' in the project files.",
+      "datatype": "text",
+      "isRequired": true,
+      "displayName": "The Company Name"
+    },
+    "company-replacement-filename": {
+      "type": "derived",
+      "valueSource": "company",
+      "valueTransform": "company-rename",
+      "fileRename": "CompanyName",
+      "replaces": "CompanyName"
+    }
+  },
+  "forms": {
+    "project-rename": {
+      "identifier": "replace",
+      "pattern": "^(?!<)Acme(?!\\s*(>|/>|\\)))",
+      "replacement": ""
+    },
+    "domain-rename": {
+      "identifier": "replace",
+      "pattern": "(?!<)Contoso(?!\\s*(>|/>|\\)))",
+      "replacement": ""
+    },
+    "company-rename": {
+      "identifier": "replace",
+      "pattern": "(?!<)CompanyName(?!\\s*(>|/>|\\)))",
+      "replacement": ""
+    },
+    "library-rename": {
+      "identifier": "replace",
+      "pattern": "(?!<)Ultron(?!\\s*(>|/>|\\)))",
+      "replacement": ""
+    }
+  }
+}

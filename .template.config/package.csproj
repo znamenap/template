@@ -1,0 +1,32 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <PackageType>Template</PackageType>
+    <PackageVersion>1.0</PackageVersion>
+    <PackageId>Project.Template.Library</PackageId>
+    <Title>Project Template Library</Title>
+    <Authors>znamenap</Authors>
+    <Description>An opinionated library template.</Description>
+    <PackageTags>dotnet-new;templates;project.library</PackageTags>
+    <TargetFramework>netstandard2.0</TargetFramework>
+
+    <IncludeContentInPack>true</IncludeContentInPack>
+    <IncludeBuildOutput>false</IncludeBuildOutput>
+    <ContentTargetFolders>content</ContentTargetFolders>
+    <NoWarn>$(NoWarn);NU5110;NU5111;NU5128</NoWarn>
+    <NoDefaultExcludes>true</NoDefaultExcludes>
+  </PropertyGroup>
+
+  <PropertyGroup>
+    <OutputPath>$(MSBuildThisFileDirectory)..\output\template\bin\</OutputPath>
+    <IntermediateOutputPath>$(MSBuildThisFileDirectory)..\output\template\obj\$(MSBuildAcme)\</IntermediateOutputPath>
+  </PropertyGroup>
+
+
+  <ItemGroup>
+    <Compile Remove="**\*" />
+    <Content Include="..\**\*" PackagePath="content"
+             Exclude="..\output\**;..\.git\**;..\.vs\**;..\.template.config\bin\**;..\.template.config\obj\**" />
+  </ItemGroup>
+
+</Project>

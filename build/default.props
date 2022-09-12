@@ -11,13 +11,13 @@
     <Platform Condition="'$(Platform)' == ''">Any CPU</Platform>
 
     <!-- Identification -->
-    <Company>Contoso Company</Company>
-    <Copyright>Contoso Company ©️</Copyright>
-    <Authors>Contoso Development Team</Authors>
+    <Company>CompanyName</Company>
+    <Copyright>CompanyName ©️</Copyright>
+    <Authors>Acme Development Team</Authors>
     <Description>Contoso Domain Solution</Description>
-    <PackageProjectUrl>https://www.Contoso.net/product/</PackageProjectUrl>
-    <Product>Contoso Product ®️</Product>
-    <Trademark>Contoso Company ™️</Trademark>
+    <PackageProjectUrl>https://www.CompanyName.com/Acme/Contoso/</PackageProjectUrl>
+    <Product>Acme Contoso Product ®️</Product>
+    <Trademark>Acme Contoso - CompanyName ™️</Trademark>
     <ProductFileVersion>$(MajorVersion).$(MinorVersion).$(PatchVersion)</ProductFileVersion>
     <InformationalVersion>$(MajorVersion).$(MinorVersion).$(PatchVersion).$(GitCommit)@$(GitBranch)</InformationalVersion>
     <FileVersion>$(MajorVersion).$(MinorVersion).$(PatchVersion)</FileVersion>
@@ -43,7 +43,7 @@
     <PackageOutputPath>$(RootDir)\output\nuget\</PackageOutputPath>
     <PackageVersion Condition="'$(VersionSuffix)' != ''">$(Version)-$(VersionSuffix)</PackageVersion>
     <PackageVersion Condition="'$(VersionSuffix)' == ''">$(Version)</PackageVersion>
-   </PropertyGroup>
+  </PropertyGroup>
 
   <PropertyGroup Label="Source Link Parameters">
     <PublishRepositoryUrl Label="Optional: Publish the repository URL in the built .nupkg (in the NuSpec &lt;Repository&gt; element)">true</PublishRepositoryUrl>

@@ -50,4 +50,15 @@ The guidance is at [CentralPackageVersion](https://github.com/microsoft/MSBuildS
 
 ### Source Link
 
-In order to benefit from debugging into the source this repo is also using guidance of [SourceLink](https://docs.microsoft.com/en-us/dotnet/standard/Ultron-guidance/sourcelink) by using the MS Build SDK's [SourceLink SDK](https://github.com/dotnet/sourcelink/blob/main/README.md). You should update global.json to use correct source link provider according to the host of the GIT repository.
+In order to benefit from debugging into the source this repo is also using guidance of [SourceLink](https://docs.microsoft.com/en-us/dotnet/standard/library-guidance/sourcelink) by using the MS Build SDK's [SourceLink SDK](https://github.com/dotnet/sourcelink/blob/main/README.md). You should update global.json to use correct source link provider according to the host of the GIT repository.
+
+# How To
+
+## Run Tests
+
+In order to run the tests including the coverage as the default then use the following construct on the command line:
+```
+dotnet test -m:1
+```
+where the -m:1 option means to run the tests only one at a time. This is the requirement for the coverage get generates successfully.
+

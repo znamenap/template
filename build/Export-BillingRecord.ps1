@@ -5,7 +5,7 @@ param(
     [string] $Path = "$PSScriptRoot\billing-records.csv",
 
     [Parameter()]
-    [ValidateSet("Daily", "Weekly", "Monthly", "Quaterly")]
+    [ValidateSet("Daily", "Weekly", "Monthly", "Quarterly")]
     [string] $Period = "Monthly",
 
     [Parameter()]
@@ -23,7 +23,7 @@ process {
     } elseif ($Period -eq "Monthly") {
         $BeginDate = $Valuation.AddDays(-$Valuation.Day+1)
         $EndDate = $BeginDate.AddMonths(1).AddSeconds(-1)
-    } elseif ($Period -eq "Quaterly") {
+    } elseif ($Period -eq "Quarterly") {
         $BeginDate = $Valuation.AddMonths(- ($Valuation.Month % 3) + 1).AddDays(-$Valuation.Day+1)
         $EndDate = $BeginDate.AddMonths(3).AddSeconds(-1)
     }
