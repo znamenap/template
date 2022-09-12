@@ -1,9 +1,8 @@
 using NUnit.Framework;
 
-namespace Project.Template.Library.SystemTests
+namespace Acme.Contoso.Ultron.UnitTests
 {
-    [Category("Integration")]
-    public class TemplateClassTests
+    public class ContosoClassTests
     {
         [SetUp]
         public void Setup()
@@ -13,7 +12,7 @@ namespace Project.Template.Library.SystemTests
         [Test]
         public void Test1()
         {
-            new TemplateClass();
+            new ContosoClass();
             Assert.Pass();
         }
     }

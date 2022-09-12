@@ -23,11 +23,11 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "test", "test", "{138E422A-5
 		sources\test\Directory.Build.targets = sources\test\Directory.Build.targets
 	EndProjectSection
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Project.Template.Library", "sources\main\Project.Template.Library\Project.Template.Library.csproj", "{FECB3AC0-9C7F-4A0A-A1D6-AD706A0D2946}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Acme.Contoso.Ultron", "sources\main\Acme.Contoso.Ultron\Acme.Contoso.Ultron.csproj", "{FECB3AC0-9C7F-4A0A-A1D6-AD706A0D2946}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Project.Template.Library.UnitTests", "sources\test\Project.Template.Library.UnitTests\Project.Template.Library.UnitTests.csproj", "{167106AA-3D41-4A41-A732-225D2DC98F9F}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Acme.Contoso.Ultron.UnitTests", "sources\test\Acme.Contoso.Ultron.UnitTests\Acme.Contoso.Ultron.UnitTests.csproj", "{167106AA-3D41-4A41-A732-225D2DC98F9F}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Project.Template.Library.SystemTests", "sources\test\Project.Template.Library.SystemTests\Project.Template.Library.SystemTests.csproj", "{B8C2F68D-2FD8-4CAE-9631-6DC09FA465AD}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Acme.Contoso.Ultron.SystemTests", "sources\test\Acme.Contoso.Ultron.SystemTests\Acme.Contoso.Ultron.SystemTests.csproj", "{B8C2F68D-2FD8-4CAE-9631-6DC09FA465AD}"
 EndProject
 Project("{13B669BE-BB05-4DDF-9536-439F39A36129}") = "build", "build\build.msbuildproj", "{257E52E9-57C9-44DB-9BAF-B055C9F7F6E9}"
 EndProject

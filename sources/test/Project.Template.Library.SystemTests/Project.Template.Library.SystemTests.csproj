@@ -1,7 +1,0 @@
-﻿<Project Sdk="Microsoft.NET.Sdk">
-
-  <ItemGroup>
-    <ProjectReference Include="..\..\main\Project.Template.Library\Project.Template.Library.csproj" />
-  </ItemGroup>
-
-</Project>

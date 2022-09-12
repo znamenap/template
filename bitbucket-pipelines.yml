@@ -22,7 +22,7 @@ pipelines:
             caches:
               - dotnetcore
             script:
-              - export SOLUTION_NAME=Project.Template.Library
+              - export SOLUTION_NAME=Project.Contoso.Ultron
               - export REPORTS_PATH=./output/linter-reports
               - dotnet new tool-manifest
               - dotnet tool install JetBrains.ReSharper.GlobalTools

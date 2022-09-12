@@ -1,23 +1,23 @@
 
 # Overview
 
-This project is supposed to provide API of the Template.
+This project is supposed to provide API of the Contoso.
 
 
 # NuGet Package Products
 
-In order to support the consumer, this project produces Template NuGet packages.
+In order to support the consumer, this project produces Contoso NuGet packages.
 
-## Template
+## Contoso
 
-This package contains all the assemblies the consumer needs in order to make the goal of the Template.
+This package contains all the assemblies the consumer needs in order to make the goal of the Contoso.
 
 
 # Build
 
 You can build the product via command line:
 ```
-PS> dotnet build .\Template.sln
+PS> dotnet build .\Contoso.sln
 ```
 
 ## Build Output
@@ -50,4 +50,4 @@ The guidance is at [CentralPackageVersion](https://github.com/microsoft/MSBuildS
 
 ### Source Link
 
-In order to benefit from debugging into the source this repo is also using guidance of [SourceLink](https://docs.microsoft.com/en-us/dotnet/standard/library-guidance/sourcelink) by using the MS Build SDK's [SourceLink SDK](https://github.com/dotnet/sourcelink/blob/main/README.md). You should update global.json to use correct source link provider according to the host of the GIT repository.
+In order to benefit from debugging into the source this repo is also using guidance of [SourceLink](https://docs.microsoft.com/en-us/dotnet/standard/Ultron-guidance/sourcelink) by using the MS Build SDK's [SourceLink SDK](https://github.com/dotnet/sourcelink/blob/main/README.md). You should update global.json to use correct source link provider according to the host of the GIT repository.
